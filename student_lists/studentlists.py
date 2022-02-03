@@ -1,4 +1,13 @@
-""" Basic class registration program """
+""" 
+Dan Smestad ITEC 2905-80 Capstone Due: 2/3/2021.
+Python Lab4. 
+Python testing your code. 
+Start your test functions with the word test!
+Arrange Action Assert
+
+Basic class registration program 
+
+"""
 
 
 class StudentError(Exception):
@@ -12,14 +21,16 @@ class ClassList:
     Student names in a class must be unique.
     """
 
-    def __init__(self, max_students):
+    def __init__(self, max_students):  #initializer
+
+        if max_students <= 0:
+            raise StudentError('Number of Studnets must be grester than 0')
 
         self.class_list = []
         self.max_students = max_students
 
-        # TODO raise an exception - StudentError - if max_students is zero or negative. 
-        # Write test to confirm.
-
+        # *Done* raise an exception - StudentError - if max_students is zero or negative. 
+        # Write test to confirm. Should be at least one student.
 
     def add_student(self, student):
         """ Add student if there is space in the class,
@@ -51,10 +62,13 @@ class ClassList:
             return self.class_list.index(student) + 1
         return None
 
-
     ## TODO add a method called is_class_full.
     # This should return True or False to indicate if the class is full.
-
+    def is_class_full(self):
+        if len(self.class_list) > self.max_students:           
+            return True 
+        else:
+            False
 
     def __str__(self):
         return ", ".join(self.class_list)
