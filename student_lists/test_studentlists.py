@@ -16,6 +16,7 @@ Practice using
 
 """
 
+from doctest import testfile
 from operator import index
 from studentlists import ClassList, StudentError
 from unittest import TestCase
@@ -152,15 +153,15 @@ class TestStudentLists(TestCase):
    
     ## a test for your new is_class_full method when the 
     # class is full use assertTrue.
-    def test_for_the_new_code_class_is_full(self):
+    def test_for_the_new_code_class_when_it_is_full(self):
         test_class = ClassList(3)
         test_class.add_student('Test Student')
         self.assertTrue(test_class.is_class_full)
         
     
     ## write a test for your new is_class_full method for
-    # when is empty, and when it is not full Use assertFalse.
-    def test_for_the_new_code_class_is_full_when_empty(self):
+    # when it is empty, and when it is not full Use assertFalse.
+    def test_for_the_new_code_class_when_it_is_empty(self):
         test_class = ClassList(1)
-        index =test_class.index_of_student('Test Student')  
-        self.assertFalse(index)
+          
+        self.assertFalse(test_class.is_class_full)
