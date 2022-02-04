@@ -1,3 +1,10 @@
+"""
+Dan Smestad ITEC 2905-80 Capstone Due: 2/3/2021.
+Python Lab4. EXTRA CREDIT
+Python testing your code. 
+
+"""
+
 # Manage a list of phones
 # And a list of employees
 
@@ -45,20 +52,23 @@ class PhoneAssignments():
 
 
     def add_employee(self, employee):
-        # TODO raise exception if two employees with same ID are added
+        # TODO raise exception if two employees with same ID are added.
         self.employees.append(employee)
 
 
     def add_phone(self, phone):
-        # TODO raise exception if two phones with same ID are added
+        # TODO raise exception if two phones with same ID are added.
         self.phones.append(phone)
 
 
     def assign(self, phone_id, employee):
-        # Find phone in phones list
-        # TODO if phone is already assigned to an employee, do not change list, raise exception
-        # TODO if employee already has a phone, do not change list, and raise exception
-        # TODO if employee already has this phone, don't make any changes. This should NOT raise an exception.
+        # Find phone in phones list:
+        # TODO if phone is already assigned to an employee, 
+        # do not change list, raise exception
+        # TODO if employee already has a phone, do not change list, 
+        # and raise exception
+        # TODO if employee already has this phone, don't make any 
+        # changes. This should NOT raise an exception.
         for phone in self.phones:
             if phone.id == phone_id:
                 phone.assign(employee.id)
@@ -76,7 +86,8 @@ class PhoneAssignments():
         # find phone for employee in phones list
 
         # TODO should return None if the employee does not have a phone
-        # TODO the method should raise an exception if the employee does not exist
+        # TODO the method should raise an exception if the employee 
+        # does not exist
 
         for phone in self.phones:
             if phone.employee_id == employee.id:
