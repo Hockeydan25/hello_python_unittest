@@ -63,8 +63,8 @@ class ClassList:
 
     ## added a method called is_class_full.
     # This should return True or False to indicate if the class is full.
-    def is_class_full(self):
-        if len(self.class_list) >= self.max_students:           
+    def is_class_full(self, max_students):
+        if len(self.class_list) >= max_students:           
             return True 
         else:
             False

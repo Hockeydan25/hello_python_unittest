@@ -28,7 +28,7 @@ class TestStudentLists(TestCase):
             test_class = ClassList(-1)
 
 
-    def test_cant_create_class_with_negative_students(self):
+    def test_cant_create_class_with_zero_students(self):
         with self.assertRaises(StudentError):
             test_class = ClassList(0)    
 
@@ -163,5 +163,7 @@ class TestStudentLists(TestCase):
     # when it is empty, and when it is not full Use assertFalse.
     def test_for_the_new_code_class_when_it_is_empty(self):
         test_class = ClassList(1)
-          
+        test_class.add_student('Kym Basinger')
+        test_class.remove_student('Kym Basinger')
+        test_class.remove_student()
         self.assertFalse(test_class.is_class_full)
