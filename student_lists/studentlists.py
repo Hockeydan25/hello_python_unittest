@@ -24,7 +24,7 @@ class ClassList:
     def __init__(self, max_students):  #initializer
 
         if max_students <= 0:
-            raise StudentError('Number of Studnets must be grester than 0')
+            raise StudentError('Number of Students must be greater than 0')
 
         self.class_list = []
         self.max_students = max_students
@@ -62,7 +62,7 @@ class ClassList:
             return self.class_list.index(student) + 1
         return None
 
-    ## TODO add a method called is_class_full.
+    ## added a method called is_class_full.
     # This should return True or False to indicate if the class is full.
     def is_class_full(self):
         if len(self.class_list) > self.max_students:           
