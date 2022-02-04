@@ -9,7 +9,6 @@ Basic class registration program
 
 """
 
-
 class StudentError(Exception):
     """ Custom exception class """
     pass
@@ -23,11 +22,11 @@ class ClassList:
 
     def __init__(self, max_students):  #initializer
 
-        if max_students <= 0:
+        if max_students <= 0:  # set max students variable instaed or a max number. 
             raise StudentError('Number of Students must be greater than 0')
 
-        self.class_list = []
-        self.max_students = max_students
+        self.class_list = []  # emtpy list will hold list of students.             
+        self.max_students = max_students  #assignment, property  
 
         # *Done* raise an exception - StudentError - if max_students is zero or negative. 
         # Write test to confirm. Should be at least one student.
@@ -71,7 +70,8 @@ class ClassList:
             False
 
     def __str__(self):
-        return ", ".join(self.class_list)
+        return ", ".join(self.class_list)  
+        # adds common between Student names.
 
 
 def main():
