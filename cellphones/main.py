@@ -38,9 +38,9 @@ def main():
     assignments.un_assign(phone2.id)          # un-assign phone 2 (which belonged to employee 3)
     print(assignments.phone_info(employee3))  # None
 
-    assignments.assign(phone3.id, employee3)   # Assign phone 3 to employee 3
+    assignments.assign(phone3.id, employee3)   # Assign phone 3 to employee 3. Created max_phone. 
     assignments.assign(phone2.id, employee3)   # Reassign phone 3 to employee3. TODO this should fail; employee3 should not be able to have two phones
-
+                                            
 
 
 if __name__ == '__main__':

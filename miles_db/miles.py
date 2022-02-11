@@ -23,7 +23,7 @@ def add_miles(vehicle, new_miles):
     if not isinstance(new_miles, (int, float)) or new_miles < 0:
         raise MileageError('Provide a positive number for new miles')
 
-    vehicle = vehicle.upper().strip() 
+    vehicle = vehicle.upper().strip()  
 
     if not vehicle:
         raise MileageError('Provide a vehicle name')

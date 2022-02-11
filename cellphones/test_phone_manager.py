@@ -11,6 +11,17 @@ import unittest
 from phone_manager import Phone, Employee, PhoneAssignments, PhoneError
 
 class TestPhoneManager(unittest.TestCase):
+    def test_cant_create_class_with_negative_phones(self):
+        with self.assertRaises(PhoneError):  # context manager 
+            PhoneAssignments = Phone(-1)
+
+
+    def test_cant_create_class_with_zero_phones(self):
+        with self.assertRaises(PhoneError):
+            TestPhoneManager = Phone(0)    
+
+    def test_can_create_class_with_positive_number_of_phones(self):
+            TestPhoneManager = Phone(1) 
 
     def test_create_and_add_new_phone(self):
 
@@ -31,6 +42,7 @@ class TestPhoneManager(unittest.TestCase):
     def test_create_and_add_phone_with_duplicate_id(self):
         # TODO add a phone, add another phone with the same id, and verify 
         # a PhoneError exception is thrown.
+        
         # TODO you'll need to modify PhoneAssignments.add_phone() 
         # to make this test pass
         testPhone1 = Phone(1, 'Apple', 'iPhone 6')

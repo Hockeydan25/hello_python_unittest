@@ -16,11 +16,11 @@ class TestMileageDB(TestCase):
     create table miles (vehicle text, total_miles float);
     """
 
-    # The name of this method is important - the test runner will look for it
+    # The name of this method is important - the test runner will look for it.
     def setUp(self):
-        # Overwrite the miles db_url with the test database URL
+        # Overwrite the miles db_url with a test database URL.
         miles.db_url = self.test_db_url
-        # drop everything from the DB to always start with an empty database
+        # drop everything from the DB to always start with an empty database.
         with sqlite3.connect(self.test_db_url) as conn:
             conn.execute('DELETE FROM miles')
         conn.close()
